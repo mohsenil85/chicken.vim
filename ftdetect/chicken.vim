@@ -1,1 +1,1 @@
-au BufNewFile, BufRead *.scm set filetype=chicken
+au BufNewFile,BufRead *.scm set filetype=scheme
