@@ -16,11 +16,16 @@ function! ChickenDocLookup(search)
 endfunction
 
 function! ChickenArgsPrompt(search)
-  let cmd = "chicken-doc " . a:search ."| grep ':' | head -n 1 | cut -d':' -f2 "
+  let cmd = "chicken-doc -s " . a:search 
   let output = system(cmd)
   echom output
 endfunction
 
+function! Prompt()
+  let name = input('enter name:')
+  normal dd
+  echom 'name was' . name
+endfunction
 
 
 func! GetSelectedText()
@@ -30,9 +35,18 @@ func! GetSelectedText()
   return result
 endfunc
 
+func! VisualDoc(search)
+  let term = ",doc " . "(" . a:search . ")"
+  echom term
+  call SlimuxSendCommand(term)
+endfunc
+
 nnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup('<C-R><C-W>')<CR>
-nnoremap <silent> <buffer> <Leader>g :call ChickenArgsPrompt('<C-R><C-W>')<CR>
+nnoremap <silent> <buffer> <Leader>c :SlimuxREPLConfigure<CR>
+"nnoremap <silent> <buffer> <Leader>g :call ChickenArgsPrompt('<C-R><C-W>')<CR>
 
 vnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup(GetSelectedText())<CR>
-
-
+vnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup(GetSelectedText())<CR>
+nnoremap <silent> <buffer> <Leader>a :call SlimuxSendCommand(",wtf <C-R><C-W>")<CR>
+nnoremap <silent> <buffer> <Leader>h :call SlimuxSendCommand(",doc <C-R><C-W>")<CR>
+vnoremap <silent> <buffer> <Leader>h :call VisualDoc(GetSelectedText())<CR>
