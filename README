@@ -1,0 +1,18 @@
+apropos = ,a  (ie, ,wtf ormap)
+docs = ,K (ie, ,doc (list-utils ormap)
+fn completion
+display args list for fn = ,g (?)
+
+docs, second order docs (ie, docs in docs)  (meh)
+debug, trace
+prompt to load namespace ("use")
+propt to apropos
+prompt to search docs
+prompt to install package
+
+,c = connect to repl
+,d = eval defun
+,b = bugger
+,s = line, or selected (not too worried about)
+
+also a skeleton proj would be nicish
