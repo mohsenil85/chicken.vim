@@ -37,7 +37,7 @@ function! ChickenDocLookup(search)
     execute 'normal ggdG'
   else
     below new ChickenDoc
-    setlocal syntax=man buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap nonumber
+    setlocal syntax=man buftype=nofile bufhidden=wipe nobuflisted nomod noswapfile nowrap nonumber
   endif
   execute "silent! r! chicken-doc " . a:search
   execute "silent! / " . a:search
