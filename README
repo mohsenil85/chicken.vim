@@ -1,18 +1,35 @@
 apropos = ,a  (ie, ,wtf ormap)
-docs = ,K (ie, ,doc (list-utils ormap)
+x docs = ,K (ie, ,doc (list-utils ormap)
 fn completion
 display args list for fn = ,g (?)
 
-docs, second order docs (ie, docs in docs)  (meh)
-debug, trace
-prompt to load namespace ("use")
-propt to apropos
-prompt to search docs
-prompt to install package
+x docs, second order docs (ie, docs in docs)  (meh)
+x trace
+dubug (?)  
+x prompt to load namespace ("use")
+x propt to apropos
+x prompt to search docs
+x prompt to install package
 
 ,c = connect to repl
 ,d = eval defun
-,b = bugger
+,b = buffer
 ,s = line, or selected (not too worried about)
+,a = wtf at cursor (or selected, not implemeted yet)
+,K = doc lookup at cursor or selected
+,H = doc into repel (should kill this)
+,i = install chicken package
+,n = prompt load namspace into repl
+,h = visually selected doc into repel (should kill)
+,t = trace fn
+,f = prompt search for docs 
+,e = eval innermost paren (as opposed to ,d which grabs outermost)
+,E = send lisp directly to repl (good for dumping vars, etc)
 
-also a skeleton proj would be nicish
+todo
+make ,a output search terms into buffer like ,K
+make the prompt commands be public like ":ChickenDocInstall"
+
+possibly view compiled output? ,l
+get error messages from csc
+
