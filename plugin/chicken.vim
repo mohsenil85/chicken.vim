@@ -37,6 +37,14 @@ func! GetSelectedText()
   return result
 endfunc
 
+func! LoadNameSpace()
+  let package = input('load namespace: ')
+  normal dd
+  let term = "(use " . package . ")"
+  call SlimuxSendCommand(term)
+  echom term
+endfunc
+
 func! VisualDoc(search)
   let term = ",doc " . "(" . a:search . ")"
   echom term
@@ -52,6 +60,7 @@ vnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup(GetSelectedText())<C
 nnoremap <silent> <buffer> <Leader>a :call SlimuxSendCommand(",wtf <C-R><C-W>")<CR>
 nnoremap <silent> <buffer> <Leader>h :call SlimuxSendCommand(",doc <C-R><C-W>")<CR>
 nnoremap <silent> <buffer> <Leader>i :call ChickenInstallPrompt()<CR>
+nnoremap <silent> <buffer> <Leader>n :call LoadNameSpace()<CR>
 vnoremap <silent> <buffer> <Leader>h :call VisualDoc(GetSelectedText())<CR>
 
 nnoremap <silent> <buffer> <Leader>t :call SlimuxSendCommand("(trace  <C-R><C-W>)")<CR>
