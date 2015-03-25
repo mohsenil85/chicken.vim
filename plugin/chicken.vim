@@ -21,10 +21,12 @@ function! ChickenArgsPrompt(search)
   echom output
 endfunction
 
-function! Prompt()
-  let name = input('enter name:')
+function! ChickenInstallPrompt()
+  let package = input('install package: ')
   normal dd
-  echom 'name was' . name
+  let cmd = "chicken-install " . package 
+  execute "silent! !" . cmd
+  echom '...done'
 endfunction
 
 
@@ -49,6 +51,7 @@ vnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup(GetSelectedText())<C
 vnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup(GetSelectedText())<CR>
 nnoremap <silent> <buffer> <Leader>a :call SlimuxSendCommand(",wtf <C-R><C-W>")<CR>
 nnoremap <silent> <buffer> <Leader>h :call SlimuxSendCommand(",doc <C-R><C-W>")<CR>
+nnoremap <silent> <buffer> <Leader>i :call ChickenInstallPrompt()<CR>
 vnoremap <silent> <buffer> <Leader>h :call VisualDoc(GetSelectedText())<CR>
 
 nnoremap <silent> <buffer> <Leader>t :call SlimuxSendCommand("(trace  <C-R><C-W>)")<CR>
