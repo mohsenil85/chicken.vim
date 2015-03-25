@@ -1,4 +1,5 @@
 set lisp
+setl complete+=,k~/.vim/bundle/chicken.vim/scheme-words.txt
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -30,17 +31,17 @@ let g:slimux_scheme_keybindings=1
 
 
 function! ChickenDocLookup(search)
-  let winnr = bufwinnr('^_output$')
+  let winnr = bufwinnr('^ChickenDoc$')
   if ( winnr >= 0 )
     execute winnr . 'wincmd w'
     execute 'normal ggdG'
   else
-    below new _output
-    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+    below new ChickenDoc
+    setlocal syntax=man buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap nonumber
   endif
   execute "silent! r! chicken-doc " . a:search
   execute "silent! / " . a:search
-  exec "nnoremap <buffer> <esc> ZZ"
+  exec "nnoremap <buffer> <esc><esc> ZZ"
   exec "nnoremap <silent> <buffer> <Leader>f :call DocPrompt()<CR>"
   exec "nnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup('<C-R><C-W>')<CR>"
   exec "nnoremap <silent> <buffer> <Leader>c :SlimuxREPLConfigure<CR>"
