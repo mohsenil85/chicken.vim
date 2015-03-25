@@ -5,21 +5,6 @@ also nice to have:
 [vim-niji](https://github.com/amdt/vim-niji)
 [paredit.vim](https://github.com/vim-scripts/paredit.vim)
 
-depends on [slimux](https://github.com/epeli/slimux)
-depends on [slimux](https://github.com/epeli/slimux)
-apropos = ,a  (ie, ,wtf ormap)
-x docs = ,K (ie, ,doc (list-utils ormap)
-fn completion
-display args list for fn = ,g (?)
-
-x docs, second order docs (ie, docs in docs)  (meh)
-x trace
-dubug (?)  
-x prompt to load namespace ("use")
-x propt to apropos
-x prompt to search docs
-x prompt to install package
-
 ,c = connect to repl
 ,d = eval defun
 ,b = buffer
