@@ -1,3 +1,12 @@
+depends on [slimux](https://github.com/epeli/slimux)
+
+also nice to have:
+
+[vim-niji](https://github.com/amdt/vim-niji)
+[paredit.vim](https://github.com/vim-scripts/paredit.vim)
+
+depends on [slimux](https://github.com/epeli/slimux)
+depends on [slimux](https://github.com/epeli/slimux)
 apropos = ,a  (ie, ,wtf ormap)
 x docs = ,K (ie, ,doc (list-utils ormap)
 fn completion
@@ -29,6 +38,7 @@ x prompt to install package
 todo
 make ,a output search terms into buffer like ,K
 make the prompt commands be public like ":ChickenDocInstall"
+arglist completion, slimv style (echom)
 
 possibly view compiled output? ,l
 get error messages from csc

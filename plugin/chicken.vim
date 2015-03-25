@@ -1,11 +1,11 @@
 set lisp
 setl complete+=,k~/.vim/bundle/chicken.vim/scheme-words.txt
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+"
 let g:slimux_scheme_leader=','
 
 
@@ -61,7 +61,6 @@ endfunction
 
 function! ChickenInstallPrompt()
 let package = input('install package: ')
-normal dd
 let cmd = "chicken-install " . package
 execute "silent! !" . cmd
 echom '...done'
