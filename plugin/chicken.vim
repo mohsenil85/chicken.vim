@@ -50,3 +50,5 @@ vnoremap <silent> <buffer> <Leader>K :call ChickenDocLookup(GetSelectedText())<C
 nnoremap <silent> <buffer> <Leader>a :call SlimuxSendCommand(",wtf <C-R><C-W>")<CR>
 nnoremap <silent> <buffer> <Leader>h :call SlimuxSendCommand(",doc <C-R><C-W>")<CR>
 vnoremap <silent> <buffer> <Leader>h :call VisualDoc(GetSelectedText())<CR>
+
+nnoremap <silent> <buffer> <Leader>t :call SlimuxSendCommand("(trace  <C-R><C-W>)")<CR>
